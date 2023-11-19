@@ -1,0 +1,177 @@
+
+/* Scrollbar Styling */
+ 
+body.Lightmode ::-webkit-scrollbar-track {
+    background-color: var(--LMain-Color);
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+body.Lightmode #UserMenu hr{
+    border:1px solid #e1e1e1;
+}
+
+body.Lightmode .SideBarIcon{
+    Color: var(--LFift-Color);
+}
+
+body.Lightmode #AccountSettingsContainer{
+    background-color: var(--LMain-Color);
+}
+
+body.Lightmode .SideBarIcon.Selected{
+    Color:#e61c8c;
+}
+
+body.Lightmode #SettingsSidebar{
+    background-color: var(--Third-Color);
+}
+
+body.Lightmode #SettingsMainContent{
+    background-color: var(--LSix-Color);
+}
+
+body.Lightmode,
+body.Lightmode #loader{
+	background-color: var(--LSix-Color);
+	Color: var(--LFift-Color);
+
+}
+
+body.Lightmode #loader #loaderWheel{
+    border: solid var(--Main-Color) 4px;
+    border-bottom: solid #fff 4px;
+}
+
+
+body.Lightmode #UserMenu{
+background-color: #fffffff0;
+}
+
+body.Lightmode #UserMenu *{
+
+Color: var(--LFift-Color)
+}
+
+body.Lightmode .icon{
+    background-color: var(--LThird-Color)
+}
+
+body.Lightmode #SocialLinks .Links{
+
+    Color: var(--LFift-Color);
+}
+
+body.Lightmode #SocialLinks .MenuBtn{
+
+    Color: var(--LFift-Color);
+}
+
+body.Lightmode #Header,
+body.Lightmode #MobileHeader{
+
+	background-color: var(--Light-Transparent);
+}
+
+body.Lightmode #MobileItems #MobileUserProfile{
+    border: 2px solid #444;
+}
+
+body.Lightmode #Header .UserProfile{
+
+	background-color: var(--LThird-Color);
+}
+
+body.Lightmode .UserProfile h3{
+
+	Color: var(--LFift-Color);
+}
+
+body.Lightmode .UserCard{
+    background-color: var(--Light-Transparent);
+}
+
+body.Lightmode .ContentCard,
+body.Lightmode .ContentCard2{
+
+	background-color: var(--Light-Transparent);
+	Color: var(--LFift-Color);
+}
+
+body.Lightmode #Buttons span,
+body.Lightmode .SectionBtn{
+
+    Color: var(--LFift-Color);
+    border-left: 0px solid var(--LMain-Color);
+}
+
+body.Lightmode #MBtn,
+body.Lightmode #AnBtn,
+body.Lightmode #GaBtn,
+body.Lightmode .SectionBtn,
+body.Lightmode .configCards,
+body.Lightmode #CloseForm,
+body.Lightmode .CardsForm #Form input,
+body.Lightmode #AccountsForm input,
+body.Lightmode #TaskForm input,
+body.Lightmode .OptionsBtns{
+	
+    background-color: var(--LSix-Color);
+    Color: var(--LFift-Color);
+}
+
+body.Lightmode .Doing #DSections{
+ background: var(--Light-Transparent);
+}
+
+body.Lightmode .SectionBtn.Selected,
+body.Lightmode #MBtn.Selected,
+body.Lightmode #AnBtn.Selected,
+body.Lightmode #GaBtn.Selected{
+	background: var(--Fourth-Color);
+    Color: var(--Fift-Color);
+}
+
+body.Lightmode .DoingCard,
+body.Lightmode .CardAdder,
+body.Lightmode .CardAdderA{
+
+	background: var(--Light-Transparent);
+}
+
+body.Lightmode .DoingCard img{
+
+	background-color: var(--LSecond-Color);
+
+}
+
+
+
+body.Lightmode .Addbtn{
+    font-size: 60px;
+    Color: var(--Fourth-Color);
+    cursor: pointer;
+}
+
+body.Lightmode .ProfileAcount,
+body.Lightmode .CardsForm{
+
+    background: var(--LMain-Color);
+}
+
+body.Lightmode .FitButton{
+    background-color: var(--LThird-Color);
+}
+
+body.Lightmode .RoutineHeader{
+    background-color: var(--LMain-Color);
+}
+
+body.Lightmode .RoutineHeader.Open{
+    background-color: var(--Fourth-Color);
+    Color: #fff;
+}
+
+body.Lightmode .Exercises{
+    background-color: var(--LMain-Color)
+}

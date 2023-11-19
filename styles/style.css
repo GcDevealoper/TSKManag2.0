@@ -1,0 +1,1309 @@
+*{
+	margin:0;
+	padding:0;
+	text-decoration: none;
+	list-style: none;	
+}
+
+:root{
+
+	/*DarkMode*/
+	--Main-Color: #222;
+	--Second-Color: #2a2a2a;
+	--Third-Color: #3636368f;
+	/*--Fourth-Color: #0089ff;*/
+	--Fourth-Color: #e61c8c;
+	--Fift-Color: #fff;
+    --Dark-Transparent: #222222ad;
+
+	/*LightMode*/	
+	--LMain-Color: #fdfdfd;
+	--LSecond-Color: #fff;
+	--LThird-Color: #e1e1e1;
+	--LSix-Color: #dddddd;
+	--LFift-Color: #444;
+    --Light-Transparent:#fdfdfdd1;
+}
+
+/***************************************************************************/
+/*Colors*/
+
+.blue{color: var(--Fourth-Color);}
+.cyan{color: cyan;}
+.yellow{color: yellow;}
+.orange{color: orange;}
+.magenta{color: magenta}
+.red{color: red}
+.lightgreen{color: lightgreen}
+
+/***************************************************************************/
+/*Loader*/
+
+#loader{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--Main-Color);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 600ms, z-index 600ms;
+}
+
+#loader.Loaded{
+    opacity: 0;
+    z-index: -1;
+}
+
+
+#loader img{
+    width: 100px;
+}
+
+#loader #loaderWheel{
+    width: 20px;
+    height: 20px;
+    border: solid #fff 4px;
+    border-bottom: solid var(--Main-Color) 4px;
+    border-radius: 50%;
+    animation: loader 1s linear infinite;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+
+@keyframes loader{
+    from{
+        transform: rotate(0deg);
+    }
+
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/**************************************************************************************************/
+/*Account*/
+
+#AccountSettingsContainer{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    background-color: var(--Main-Color);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 600ms, z-index 600ms;
+}
+
+#AccountSettingsContainer.Open{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    opacity: 1;
+    z-index: 100;
+}
+
+/***/
+html{
+	scroll-behavior: smooth;
+}
+
+body{
+	overflow: hidden;
+	background-color: var(--Main-Color);
+	color: var(--Fift-Color);
+	transition: all 300ms;
+    background-image: url(../media/wall2.jpg);
+    background-size: 100%;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 7px;
+}
+ 
+::-webkit-scrollbar-track {
+    background-color: var(--Main-Color);
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    background: var(--Fourth-Color); 
+    transition: all 1s;
+}
+
+::-webkit-scrollbar-thumb:hover{
+	transition: all 1s;
+	background:#b8106c;;
+}
+
+/***************************************************************************/
+/*HEADER*/
+/*Mobile Header*/
+#MobileHeader{
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    background-color: var(--Dark-Transparent);
+    bottom: 0;
+
+    display: flex;
+    flex-flow: row-wrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transform: translateY(100%);
+    transition: all 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+#MobileItems{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 50px;
+}
+#MobileItems > i{
+    font-size: 27px;
+    cursor:pointer
+}
+#MobileItems #MobileUserProfile{
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer
+}
+
+/**/
+#Header{
+	width: 100%;
+	height: 60px;
+	background-color: var(--Dark-Transparent);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+    transition: all 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+#Header .UserProfile{
+
+	background-color: var(--Third-Color);
+	border-radius: 20px;
+	width: auto;
+	height: 40px;
+	margin-left: 10px;
+	padding-left: 5px;
+    padding-right: 10px;
+
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 10px;
+    cursor: pointer;
+}
+
+.UserProfile img{
+
+	width: 30px;
+	height: 30px;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.UserProfile h3{
+
+	font-size: 15px;
+	color: var(--Fift-Color);
+}
+
+
+/***************************************************************************/
+/*USER MENU*/
+
+#UserMenu{
+    position: absolute;
+    background-color: #222222ed;
+    width: 211px;
+    /* height: 311px; */
+    height: auto;
+    top: 6px;
+    left: 11px;
+    border-radius: 3%;
+    padding-top: 3px;
+    box-shadow: 0px 0.6rem 1rem rgb(0 0 0 / 50%);
+    z-index: 20;
+    overflow: hidden;
+}
+
+#UserMenu hr{
+    width: 80%;
+    margin:0px auto;
+    border:1px solid #444;
+    border-radius:15px;
+}
+
+#UserHead{
+    border-left: 0px solid var(--Fourth-Color);
+    border-radius: auto;
+    width: auto;
+    height: 50px;
+    margin: 7px;
+    margin-bottom: 13px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: flex-start;
+    gap: 10px;
+    animation: appear 1s;
+    transition: all 200ms;
+}
+
+#UserHead.active{
+    border-left: 6px solid var(--Fourth-Color);
+    border-radius: 31px;
+    transition: all 200ms;
+}
+
+@keyframes appear{
+    0%{
+        transform: translateX(-100%);
+        border-left: 0px solid #fff0;
+        border-radius: auto;
+    }
+
+    70%{
+        transform: translateX(0%);
+        border-left: 0px solid #fff0;
+        border-radius: auto;
+    }
+
+    100%{
+        border-left: 6px solid var(--Fourth-Color);
+        border-radius: 31px;
+    }
+}
+
+@keyframes appear2{
+    0%{
+        transform: translateX(-100%);
+    }
+
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes appearUp{
+    0%{
+        transform: translateY(100%);
+    }
+
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+@keyframes leftt{
+    0%{
+        transform: translateX(-100%);
+    }
+
+}
+
+#UserHead img{
+
+width: 40px;
+height: 40px;
+object-fit: cover;
+border-radius: 50%;
+}
+
+#UserHead h3{
+
+font-size: 19px;
+color: var(--Fift-Color);
+}
+
+.Option{
+    color: var(--Fift-Color);
+    border-radius: 27px;
+    width: 88%;
+    height: 42px;
+    margin: 7px;
+    cursor: pointer;
+    /*margin-left: 4%;*/
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    border-left: 0px solid #fff0;
+    border-radius: auto;
+    animation: appear2 1s ease-in-out;
+    transition: all 200ms;
+    animation-delay: calc(.01s * var(--i));
+}
+
+
+.Option:hover{
+    border-left: 6px solid var(--Fourth-Color);
+    border-radius: 9px;
+    transition: all 200ms;
+}
+
+.icon{
+    color: var(--Fift-Color);
+    background-color: var(--Third-Color);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    border-left: 0px solid var(--Main-Color);
+    border-radius: 25px;
+    transition: all 200ms;
+ }
+
+#SocialLinks{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+    padding-bottom: 22px;
+    gap: 5px;
+    cursor: default;
+    overflow: hidden;
+}
+
+#SocialLinks > a{
+    animation: appearUp .9s;
+    animation-delay: calc(.01s * var(--j));
+}
+
+.UserMenuButton{
+    background: #7900ff;
+    color: var(--Fift-Color);
+    padding: 4px;
+    font-size: 14px;
+    border: none;
+    border: 1px solid #ccc9;
+    width: auto;
+    font-weight: bold;
+    visibility: visible;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.MiniTitle{
+    position: absolute;
+    top: 20px;
+    font-size: 15px;
+}
+
+.MiniTitle::first-letter{
+    color: var(--Fourth-Color);
+}
+
+.UserProfileContainer {
+    position: relative;
+    width: 60%;
+    padding: 33px;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 24px;
+    align-items: center;
+}
+
+#BackgroundPhotoExample{
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    width: 60%;
+}
+
+#BackgroundPhotoExample img{
+    width: 100%;
+    object-fit: contain;
+}
+
+#ProfileFotoExample {
+    width: 90px;
+    height: 90px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid var(--LMain-Color);
+}
+
+#ProfileFotoExample img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/***************************************************************************/
+/*USER SIDE BAR*/
+#SettingsMainContainer{
+    position: relative;
+    width: 70vw;
+    height: 80vh;
+    display: flex;
+    flex-flow: row wrap;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#SettingsSidebar{
+    width: calc(20% - 20px);
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    padding-top: 5%;
+    padding-left: 20px;
+    background-color: var(--Second-Color);
+}
+
+#SettingsMainContent{
+    width: 80%;
+    height: 100%;
+    background: var(--Third-Color);
+}
+
+/*------------------------*/
+#Main{
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	width: 95%;
+	height: 80vh;
+	margin: 25px auto;
+    transform: translateY(0px);
+    transition: all 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+
+}
+
+#SideBar{
+
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+    min-width: 217px;
+	width: 19%;
+	height: 100%;
+    z-index: 10;
+    transition: all 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.SideBarIcon{
+    color: var(--Fift-Color);
+    padding-right: 3px;
+    transition: all 200ms;
+}
+
+
+
+.SideBarIcon.Selected{
+    color:#e61c8c;
+    transition: all 200ms;
+}
+
+.UserCard{
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 15px;
+    width: 141px;
+    height: 248px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    overflow: hidden;
+    box-shadow: 0px 0.6rem 1.5rem rgb(0 0 0 / 50%);
+    background-color: var(--Dark-Transparent);
+    border-radius: 15px;
+    /* border: 5px solid #444444ab;*/
+}
+
+.UserCard img{
+
+	width: 80px;
+	height: 80px;
+/*	width: 130px;
+	height: 130px;*/
+	object-fit: cover;
+	border-radius: 50%;
+	/*border: 3px solid var(--Fift-Color);*/
+}
+
+
+#Buttons{
+
+    display: flex;
+    flex-flow: column wrap;
+    gap: 0px;
+    width: 100%;
+    text-align: left;
+}
+
+#Buttons span,
+.SectionBtn{
+
+    color: var(--Fift-Color);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    padding-left: 15px;
+    cursor: pointer;
+	border-left: 0px solid var(--Main-Color);
+    border-radius: 0px;
+    transition: all 200ms; 
+}
+
+#MBtn,
+#AnBtn,
+#GaBtn,
+.SectionBtn{
+    background-color: var(--Main-Color);
+}
+
+.SectionBtn{
+	border-radius: 25px;
+}
+
+#Buttons .SideBtn.Selected{
+	border-left: 6px solid var(--Fourth-Color);
+    border-radius: 4px;
+    transition: all 200ms;
+}
+
+#Content {
+    width: 75%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    padding:15px;
+    transition: all 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+/************************************************************************************/
+/*TO DO LIST*/
+
+.ListContainer {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 34px;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.13);
+    transition: all 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.ListContainer.open{
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+    transform: scale(1);
+}
+
+.ContentCard,.ContentCard2{
+
+    min-width: 322px;
+	width: 35%;
+    min-height: 454px;
+	height: auto;
+	max-height: 414px;
+	overflow-y: auto;
+	border-radius: 2%;
+	background-color: var(--Dark-Transparent);
+	color: var(--Fift-Color);
+	padding-bottom: 30px;
+
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 20px;
+	padding-left: 20px;
+	padding-top: 20px;
+	font-size: 19px;
+	opacity: 1;
+	visibility: visible;
+	box-shadow: 0px 1rem 1.5rem rgb(0 0 0 / 50%);
+	/*transform: translateX(120%);*/
+    transform: scale(1);
+    transition: all 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.ContentCard2 h2{max-width: 77%;}
+#TodoTitle,#NotesContent{outline: none;}
+
+#TodolistContent{
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 20px;
+}
+
+#TodoListControls,#NotesControls{
+	position: absolute;
+    display: flex;
+    right: 0;
+    margin: 12px 17px;
+    gap: 10px;
+}
+
+#TodoListControls i,
+#NotesControls i{
+	color: var(--Fourth-Color);
+	cursor: pointer;
+}
+
+#ListTDo{
+	display: flex;
+	flex-flow: column wrap;
+	gap: 2px;
+}
+
+.Task2{
+    width: 90%;
+}
+
+.Task{
+   transition: text-decoration 300ms, text-decoration-color 300ms;
+}
+
+.Task.Finished{    
+   text-decoration: 2px line-through;
+   text-decoration-color: var(--Fourth-Color);
+   transition: all 300ms
+}
+
+.Task > .EraseTask{
+    position: relative;
+    left: 9px;
+    top: -2px;
+    color: #fff;
+    font-size: 11px;
+    background: #f7421f;
+    padding: 4px 6px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 600ms;
+
+}
+
+.Task > .EraseTask.Open{
+	position: relative;
+    left: 9px;
+    top: -2px;
+    color: #fff;
+    font-size: 11px;
+    background: #f7421f;
+    padding: 4px 6px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 1;
+    visibility: visible;
+    transition: all 600ms;
+}
+
+.Task > .CheckTask{
+    position: relative;
+    left: 9px;
+    top: 0px;
+    color: #2f2;
+    font-size: 18px;
+    /* background: #f7421f; */
+    padding: 4px 6px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 600ms;
+}
+
+.Task > .CheckTask.Open{
+    position: relative;
+    left: 9px;
+    top: 0px;
+    color: #2f2;
+    font-size: 18px;
+    /* background: #f7421f; */
+    padding: 4px 6px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 1;
+    visibility: visible;
+    transition: all 600ms;
+}
+
+div#Notes img {
+    width: 100%;
+}
+/************************************************************************/
+/*TO DO LIST FORM*/
+
+.CardsForm.TodoList {
+    z-index: 110;
+    position: relative;
+    width: 30%;
+    height: 166px;
+    top: 0px;
+    background-color: var(--Main-Color);
+    box-shadow: 0px 0.6rem 1.5rem rgb(0 0 0 / 50%);
+    overflow: hidden;
+    display: flex;
+    border-radius: 15px;
+    gap: 60px;
+    opacity: 0;
+    transform: scale(1.13);
+    transition: all 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    padding: 12px;
+    padding-top: 33px;
+}
+
+.CardsForm.Gallery{
+
+    z-index: 110;
+    position: relative;
+    width: 55%;
+    height: 400px;
+    top: 0px;
+    background-color: var(--Main-Color);
+    box-shadow: 0px 0.6rem 1.5rem rgb(0 0 0 / 50%);
+    overflow: hidden;
+    display: flex;
+    border-radius: 15px;
+    gap: 60px;
+    opacity: 0;
+    transform: scale(1.13);
+    transition: all 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.CardFormBg.open .CardsForm{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.CardFormBg.open{
+
+    opacity: 1;
+    visibility: visible;
+}
+
+#CloseForm, #CloseSettings {
+    position: absolute;
+    right: 4%;
+    top: 4%;
+    font-size: 3.7vh;
+    /* background: #444; */
+    padding: 2% 3%;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: scale(.7);
+}
+
+#CloseSettings{
+    font-size: 5vh;
+}
+
+.CardsForm #Form{
+    display: flex;
+    flex-flow: column wrap;
+    gap: 7px;
+    padding-top: 60px;
+    align-items: flex-start;
+    width: 21%;
+}
+
+.CardsForm #Form input[type="text"]{
+    outline: none;
+    border-radius: 15px;
+    border: none;
+    background-color: #444;
+    height: 22px;
+    width: 122%;
+    color: #fff;
+    padding-left: 9px;
+}
+
+.CardFormBg{
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: center;
+    background-color: #222222cf;
+
+    opacity: 0;
+    z-index: 100;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+#TaskForm {
+    display: flex;
+    width: 90%;
+    gap: 10px;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#TaskForm i{
+    font-size: 19px;
+    color: var(--Fourth-Color);
+}
+
+#TaskForm input{
+    outline: none;
+    border-radius: 15px;
+    border: none;
+    background-color: #444;
+    height: 22px;
+    width: 49%;
+    color: #fff;
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+#TaskInput {
+    background: var(--LFift-Color);
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    color: var(--Fift-Color);
+    padding: 7px;
+    width: 80%;
+    height: 100px;
+    resize: none;
+}
+
+#TaskInput::placeholder{
+    color: #fff;
+}
+
+#AddTaskButton{
+    background: #7900ff;
+    color: var(--Fift-Color);
+    padding: 4px;
+    font-size: 14px;
+    border: none;
+    border: 1px solid #ccc9;
+    width: auto;
+    font-weight: bold;
+    visibility: visible;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+@media (max-width:1042px){
+
+    .ContentCard, .ContentCard2 {
+        min-width: 271px;
+        font-size: 18px;
+    }
+
+    #Main {
+        gap: 6px;
+    }
+
+    #SideBar {
+        min-width: auto;
+        width: 17%;
+        transform: scale(.9);
+    }
+}
+
+@media (max-width: 876px){
+    .ListContainer.open{
+        transform: scale(.96);
+        justify-content: center;
+    }
+
+    #MobileHeader{
+        transform: translateY(0%);
+    }
+    #Header{
+        transform: translateY(-100%)
+    }
+
+    #Main{
+        transform: translateY(-11%);
+    }
+
+    #SideBar{
+      transform: scale(.9) translateX(-150%);
+      width: 0%;
+      opacity: 0;
+    }
+
+    #Content{
+        width: 93%;
+    }
+}
+
+/************************************************************************/
+/*DOING GALLERY*/
+
+#Verificar,#CrearCarta,#AddAccount,.ImageButton{
+
+    background: #7900ff;
+    color: var(--Fift-Color);
+    padding: 6px;
+    border: none;
+    border: 1px solid #ccc9;
+    width: auto;
+    margin-top: 7px;
+    font-weight: bold;
+    visibility: visible;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.OptionsBtns{
+
+    color: var(--Fift-Color);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    padding-left: 12px;
+    cursor: pointer;
+    background-color:var(--Second-Color);
+    border-radius: 25px;
+    transition: all 200ms;
+}
+
+.OptionsBtns.Selected{
+    background-color: var(--Fourth-Color)
+}
+
+.OptionsBtnContainer{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#AddAccount{
+    margin: 0 auto;
+    margin-top: 7px;
+}
+
+#CrearCarta.hidden{
+    visibility: hidden;
+}
+
+.CardsForm > div{
+    max-width: 47%;
+}
+
+.CardsForm > div > img{
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+    height: 100%;
+}
+
+.CardsForm #Form{
+    display: flex;
+    flex-flow: column wrap;
+    gap: 7px;
+    padding-top: 60px;
+    align-items: flex-start;
+    width: 21%;
+}
+
+.CardsForm #Form input[type="text"]{
+    outline: none;
+    border-radius: 15px;
+    border: none;
+    background-color: #444;
+    height: 22px;
+    width: 122%;
+    color: #fff;
+    padding-left: 9px;
+}
+
+
+.CardsForm #Form input[type="number"]{
+    outline: none;
+    border-radius: 15px;
+    border: none;
+    background-color: #444;
+    height: 22px;
+    width: 40%;
+    color: #fff;
+    padding-left: 13px;
+}
+
+.CardFormBg{
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: center;
+    background-color: #222222cf;
+
+    opacity: 0;
+    z-index: 100;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.CardFormBg.open{
+
+    opacity: 1;
+    visibility: visible;
+}
+
+.Doing{
+
+	position: absolute;
+    width: 97%;
+    height: 436px;
+    display: flex;
+    gap: 15px;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    overflow-y: auto;
+    overflow-x: hidden;
+    visibility: hidden;
+    opacity: 0;
+    /*transform: translateX(120%);*/    
+    transform: scale(1.13);
+    transition: all 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+
+.Doing.open {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 10px;
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+    /* transform: translateX(0px); */
+    transform: scale(1);
+}
+
+
+.Doing #DSections{
+	width: 100%;
+    height: 70px;
+    background: var(--Dark-Transparent);
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-left: 10px;
+    border-radius: 33px;
+}
+
+#SectionsBtns{
+    display: flex;
+    gap:10px;
+
+}
+
+.configCards{
+    color: var(--Fift-Color);
+    background-color: var(--Main-Color);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    border-left: 0px solid var(--Main-Color);
+    border-radius: 25px;
+    transition: all 200ms;
+ }
+
+.SectionBtn.Selected,
+#MBtn.Selected,
+#AnBtn.Selected,
+#GaBtn.Selected{
+	background: var(--Fourth-Color);
+	transition: all 600ms;
+}
+
+/*Botones de las cartas*/
+.eraseCard{
+    position: absolute;
+    right: 11px;
+    top: 11px;
+    color: #fff;
+    font-size: 22px;
+    padding: 7px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 600ms;
+}
+
+.changecont{
+    position: absolute;
+    width: 239px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 600ms;
+}
+
+.changeleft,
+.changeright{
+    margin-left: 10px;
+    font-size: 18px;
+    background-color: #444;
+    border-radius: 50%;
+    padding: 6px 11px;
+    cursor: pointer;
+}
+
+.eraseCard.open{
+    position: absolute;
+    color: #f7421f;
+    background: #ffffff;
+    padding: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 1;
+    visibility: visible;
+    transition: all 600ms;
+    font-size: 29px;
+}
+
+.changecont.open{
+    position: absolute;
+    width: 239px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    opacity: 1;
+    visibility: visible;
+    transition: all 600ms;
+}
+
+/**/
+.DoingCard,
+.CardAdder{
+    position: relative;
+	background: var(--Dark-Transparent);
+    width: 240px;
+    height: 350px;
+    border-radius: 5px;
+    display: flex;
+    order: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.CardAdderA{
+    width: 262px;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 10px;
+    height: 328px;
+    background: var(--Main-Color);
+    border-radius: 15px;
+    box-shadow: 0px 0.6rem 1.5rem rgb(0 0 0 / 50%);
+    align-items: center;
+    justify-content: center;
+}
+
+.DoingCard{order: 0;}
+
+.DoingCard img,
+#CardAdder img{
+
+	width: 100%;
+	height: 100%;
+	background-color: var(--Second-Color);
+	border-radius: 5px;
+	overflow: hidden;
+	object-fit: cover;
+	object-position: top;
+    cursor: pointer;
+}
+
+/*
+#CardAdder{
+    order: 100;
+}*/
+
+.Addbtn,
+.Accountsbtn{
+    font-size: 60px;
+    color: var(--Fourth-Color);
+    cursor: pointer;
+}
+
+ .Mangas,
+ .Animes-Series,
+ .Games,
+ .GalleryContainer{
+
+	position: absolute;
+    width: 100%;
+    height: 350px;
+    top: 80px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 15px;
+    overflow: hidden;
+ 	visibility: hidden;
+    transform: translateX(120%);
+    transition: all 1000ms;
+}
+
+.Mangas.open, .Animes-Series.open, .Games.open, .GalleryContainer.open {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+    overflow: hidden;
+    visibility: visible;
+    transform: translateX(0px);
+    transition: all 1000ms;
+    
+}
