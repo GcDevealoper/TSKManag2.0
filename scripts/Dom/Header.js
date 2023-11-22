@@ -1,11 +1,12 @@
 const UserProfile = document.querySelector('.UserProfile')
+const $MobileProfileImage = document.getElementById('MobileUserProfile')
 export let UserImage
 let UserName
 let BodyBackground
 
 //Objetos
 export const images = {
-  'Guest': './media/Profiles/Guest.jpg'
+	'Guest': './media/Profiles/Guest.jpg'
 }
 
 
@@ -43,16 +44,27 @@ export const Header = ()=>{
     UserProfile.innerHTML = `
     <img src="${UserImage}">
     <h3>${UserName}</h3>`
+
+    $MobileProfileImage.setAttribute("src", `${UserImage}`)
 }
 
 /*User Menu Logic*/
-export function OpenUserMenu(){
+export function OpenUserMenu(e){
 
-  let $UserHeader = document.getElementById('UserProfileMenu');
+  let $UserHeader 
+  //= document.getElementById('UserProfileMenu');
   let $Container = document.createElement("div")
   $Container.setAttribute("id","UserMenu")
-
   $Container.innerHTML = MenuTemplate
+  
+  if(e == 'Desktop'){
+    $UserHeader = document.getElementById('UserProfileMenu')
+  }
+
+  else if(e == 'Mobile') {$UserHeader = document.getElementById('MobileHeader')
+  $Container.setAttribute("class", 'Mobile')
+  }
+  
   $UserHeader.appendChild($Container)
   
   CloseMenuListener($Container)
@@ -87,6 +99,7 @@ function CloseMenuListener(Menu){
 //Cerrar form
 let $UserHead = document.getElementById('UserHead')
   $UserHead.addEventListener("click", (e)=>{
+    Menu.classList.remove("Mobile")
     Menu.remove()
     e.stopPropagation()
   },false)

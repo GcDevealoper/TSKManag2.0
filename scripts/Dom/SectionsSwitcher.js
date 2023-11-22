@@ -24,15 +24,23 @@ export function ChangeFormStyles(number){
   }
 
 function ChangeSectionIcons(Icon){
-    const Icons = [D.getElementById('TodoList'),
+    const Icons = [
+    D.getElementById('TodoList'),
     D.getElementById('Accounts'),
     D.getElementById('DoingBtn'),
     D.getElementById('Fitness')]
 
-    const IconsII = [D.getElementById('Tareas'),
+    const IconsII = [
+    D.getElementById('Tareas'),
     D.getElementById('Cuentas'),
     D.getElementById('Doing'),
     D.getElementById('Fitness2')]
+
+    const MobileIcons = [
+        D.getElementById('MTareas'),
+        D.getElementById('MCuentas'),
+        D.getElementById('MDoing'),
+        D.getElementById('MFitness2')]
 
     for(let i=0;i<Icons.length;i++){
         Icons[i].classList.remove('Selected')
@@ -41,8 +49,10 @@ function ChangeSectionIcons(Icon){
         }
     }
 
+    for(let i=0;i<MobileIcons.length;i++){MobileIcons[i].classList.remove('Selected')}
 
 
     Icons[Icon].classList.add('Selected')
     IconsII[Icon].classList.add('Selected')
+    MobileIcons[Icon].classList.add('Selected')
 }

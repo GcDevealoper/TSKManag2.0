@@ -51,9 +51,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
 document.addEventListener("click", (e)=>{
 
   if(e.target.matches("#UserProfileMenu") || e.target.matches("#UserProfileMenu img") || e.target.matches("#UserProfileMenu h3")) {
-    OpenUserMenu()
+    OpenUserMenu('Desktop')
     console.log(e.target)
   }
+  if(e.target.matches('#MobileUserProfile')) OpenUserMenu('Mobile')
   
   if(e.target.matches("#SaveNotes")) storeNotes()
 
@@ -72,12 +73,21 @@ document.addEventListener("click", (e)=>{
 
   if(e.target.matches('.CloseForm')) BORRAR(Section)
 
+  //Section Switcher Normal
   if(e.target.matches('#TodoList')) {ChangeSection(0);Section = 0; ChangeFormStyles(Section)}
   if(e.target.matches('#DoingBtn')) {ChangeSection(2);Section = 2; ChangeFormStyles(Section)}
+  //Section Switcher Mobile
+  if(e.target.matches('#MTareas')) {ChangeSection(0);Section = 0; ChangeFormStyles(Section)}
+  if(e.target.matches('#MDoing')) {ChangeSection(2);Section = 2; ChangeFormStyles(Section)}
 
+  //Gallery Switcher
   if(e.target.matches('#MBtn')) GallerySwitcher(0)
   if(e.target.matches('#AnBtn')) GallerySwitcher(1)
   if(e.target.matches('#GaBtn')) GallerySwitcher(2)
+
+  //Section Switcher Mobile
+
+
 
   if(e.target.matches('#Verificar')) {
     validarCampos()
